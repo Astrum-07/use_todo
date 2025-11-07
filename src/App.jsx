@@ -7,7 +7,7 @@ export default function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [editIndex, setEditIndex] = useState(null);
 
-  // LocalStorage'dan malumotlarni olish
+
   useEffect(() => {
     const savedTodos = localStorage.getItem("todos");
     if (savedTodos) setTodos(JSON.parse(savedTodos));
@@ -16,7 +16,7 @@ export default function App() {
     if (savedDarkMode) setDarkMode(JSON.parse(savedDarkMode));
   }, []);
 
-  // LocalStorage'ga saqlash
+
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
@@ -80,7 +80,7 @@ export default function App() {
     >
       <h1 className="text-3xl font-bold mt-10 mb-6 text-center">TODO LIST</h1>
 
-      {/* Input va tugmalar */}
+
       <div className="flex flex-col sm:flex-row items-center gap-3 mb-6 w-full max-w-md">
         <div className="flex items-center border rounded-xl px-3 py-2 border-purple-400 flex-1 w-full">
           <i className="fa-solid fa-magnifying-glass text-purple-500 mr-2"></i>
@@ -95,7 +95,7 @@ export default function App() {
           />
         </div>
 
-        {/* Add va Dark/Light tugmalari */}
+
         <div className="flex gap-3 w-full sm:w-auto">
           <button
             onClick={addTodo}
@@ -117,7 +117,7 @@ export default function App() {
         </div>
       </div>
 
-      {/* Todo list */}
+
       <div className="w-full max-w-md">
         {todos.length === 0 ? (
           <div className="flex flex-col items-center justify-center text-center mt-20 opacity-70">
